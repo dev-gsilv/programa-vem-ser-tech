@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Exemplo</title>
+</head>
+<body>
+    <h1>Calculadora de taxa de entrega</h1>
+    <span>Insira o valor total da compra e a taxa definida pelo estabelecimento</span>
+    <form action="./index.js" method="post" id="meuFormulario">
+        <label for="campo1">Valor da compra (R$):</label>
+        <input type="text" id="valor" name="campo1" required>
+        <br><br>
+        
+        <label for="campo2">Taxa de entrega (%):</label>
+        <input type="text" id="taxa" name="campo2" required>
+        <br><br>
+        
+        <input type="submit" value="Calcular taxa de entrega">
+    </form>
+    <span>Taxa de entrega R$: <span id="valorTaxa"></span></span>
+    <script src="./index.js"></script>
+</body>
+</html>
