@@ -17,7 +17,11 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
         document.getElementById("valorTaxa").textContent = valorTaxa;
         document.getElementById("totalRestaurante").textContent = valorRestaurante;
         
-        if (valor > 500) alert("Compra acima de R$ 500,00!")
+        setTimeout(function() {
+            if (valor > 500) {
+                alert("Valor acima de R$ 500!");
+            }
+        }, 100);
     } else {
         alert("Certifique-se de que ambos os campos contenham números válidos.");
     }
