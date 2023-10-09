@@ -1,3 +1,5 @@
+const TAXA_FIXA = (10/100);
+
 document.getElementById("meuFormulario").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita o envio do formulário padrão
 
@@ -8,11 +10,16 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
     // Verifica se os valores são números
     if (!isNaN(valor) && !isNaN(taxa)) {
         // Calcula o resultado da multiplicação
-        let resultado = valor * (taxa/100);
+        let valorTaxa = valor * (taxa/100);
+        let valorRestaurante = valor - ( valor * TAXA_FIXA);
 
         // Exibe o resultado no elemento <span>
-        document.getElementById("valorTaxa").textContent = resultado;
+        document.getElementById("valorTaxa").textContent = valorTaxa;
+        document.getElementById("totalRestaurante").textContent = valorRestaurante;
+        
+        if (valor > 500) alert("Compra acima de R$ 500,00!")
     } else {
         alert("Certifique-se de que ambos os campos contenham números válidos.");
     }
+    
 });
