@@ -4,82 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa Vem Ser Tech - Aula #01</title>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-    <div style=
-        "display: flex;
-         flex-direction: column;
-         align-items: center;">
-        <div style="border: 1px gray solid; 
-        width: 80vh;
-        margin: 14px; 
-        padding: 0; 
-        border-radius: 25px;
-        background-color: rgb(189, 0, 0);
-        color: white;
-        text-align: center;" >
+    <div id="container">
+        <div id="mainTitle">
             <h2>Calculadora de Taxas</h1>    
         </div>
         
-        <div 
-        style="background-color: palegoldenrod; 
-        color: black;
-        width: 60vh;
-        margin: 0; 
-        padding: 10px; 
-        border-radius: 25px;
-        text-align: center;" >
-        Insira o valor total da compra e a taxa definida pelo estabelecimento:
+        <div id="subtitle">
+            Insira o valor total da compra e a taxa definida pelo estabelecimento:
         </div>
 
-        <form 
-        style="background-color: palegreen; 
-        width: 60vh;
-        margin: 14px; 
-        padding: 25px 10px; 
-        border-radius: 25px;" 
-
-        action="./index.js" method="post" id="meuFormulario">
-            <label for="campo1">Valor da compra (R$):</label>
-            <input type="text" id="valor" name="campo1" onfocus="this.value=''" required>
+        <form action="./index.js" method="post" id="meuFormulario">
+            <label for="campo1" class="formLabel">Valor da compra (R$):</label>
+            <input type="text" id="valor" name="campo1" class="formInput" onfocus="this.value=''" required>
             <br><br>
             
-            <label for="campo2">Taxa de entrega (%):</label>
-            <input type="text" id="taxa" name="campo2" onfocus="this.value=''" required>
+            <label for="campo2" class="formLabel">Taxa de entrega (%):</label>
+            <input type="text" id="taxa" name="campo2" class="formInput" onfocus="this.value=''" required>
             <br><br>
             
-            <input 
-            style=
-            "background-color: red;
-            color: white;
-            padding: 5px 10px;
-            margin:0px auto; 
-            display:block;
-            text-align: center;
-            border-radius: 25px;"
-            type="submit" value="Calcular taxa de entrega">
+            <input type="submit" class="button" value="Calcular taxa de entrega">
         </form>
-        <div style=
-        "background-color: palegreen;
-        padding: 5px 10px;
-        margin: 5px auto; 
-        width: 60vh;
-        border-radius: 25px;
-        text-align: center;">Taxa de entrega: R$ 
+        <div class="output">Taxa de entrega: R$ 
             <span id="valorTaxa">0</span>
         </div>
-        <div style=
-        "background-color: palegreen;
-        padding: 5px 10px;
-        margin: 1px auto; 
-        width: 60vh;
-        border-radius: 25px;
-        text-align: center;">Valor a receber: R$ 
+        <div class="output">Valor a receber: R$ 
             <span id="totalRestaurante">0</span>
         </div>
     </div>
-
     <script src="./index.js"></script>
 </body>
 </html>
