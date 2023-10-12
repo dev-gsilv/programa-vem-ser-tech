@@ -1,4 +1,5 @@
 // TAREFA 01
+console.log("TAREFA 01");
 const listaProdutos = []; 
 
 function adicionarProduto(produto){listaProdutos.push(produto)};
@@ -29,6 +30,7 @@ exibirProdutos(listaProdutos);
 exibirProdutosHTML(listaProdutos);
 
 // TAREFA 02
+console.log("TAREFA 02");
 let menu = ["pizza", "hamburguer", "batata frita", "coxinha", "pastel"];
 let pedido = [];
 
@@ -39,7 +41,7 @@ function adicionarAoPedido(menu, produto){
         const p = document.createElement("p");
         p.innerText = produto;
         document.body.appendChild(p);
-    } else {console.log("Nosso menu não conta o produto "+produto);}
+    } else {console.log("Nosso menu não conta com o produto "+produto);}
 };
 
 let aula = document.createElement("h3");
@@ -55,6 +57,7 @@ console.log(pedido);
 
 
 // TAREFA 03
+console.log("TAREFA 03");
 let menuMatriz = [
     ["pizza", "hamburguer", "batata frita", "coxinha", "pastel"],
     ["café", "água", "refrigerante"],
