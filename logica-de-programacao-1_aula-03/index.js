@@ -19,7 +19,7 @@ function calcularTotalPedido(pedido){
 }
 
 let resultado = calcularTotalPedido(pedidoOriginal);
-console.log("Tarefa #1:",resultado);
+console.log("Tarefa #2:",resultado);
 
 // TAREFA 03:
 let pedidosDoDia = [
@@ -59,4 +59,4 @@ function calcularTotalDiario(pedidosArray){
 }
 
 resultado = calcularTotalDiario(pedidosDoDia).toFixed(2);
-console.log("Tarefa #2:",resultado);
+console.log("Tarefa #3:",resultado);
