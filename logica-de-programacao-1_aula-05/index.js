@@ -1,4 +1,5 @@
 // TAREFA 01
+let resultado;
 let pedidosRestaurante= [
     {
         nomeCliente: "Maria",
@@ -47,14 +48,12 @@ let pedidosRestaurante= [
 ]
 
 function calcularTempoMedioEntrega(pedidosArray){
-    let media = 0;
-    pedidosArray.forEach((e,i,a) => {media += e.tempoEntrega});
-    //media = pedidosArray.reduce((soma, pedido) => {soma + pedido.tempoEntrega, 0});
-    media /= pedidosArray.length;
+    const somaTempo = pedidosArray.reduce((soma, pedido) => soma + pedido.tempoEntrega, 0);
+    const media = somaTempo / pedidosArray.length;
     return media;
 }
 
-let resultado = calcularTempoMedioEntrega(pedidosRestaurante);
+resultado = calcularTempoMedioEntrega(pedidosRestaurante);
 console.log("\nTarefa #1. Tempo médio de entrega (minutos):",resultado,"\n\n## ## ## ##");
 
 // TAREFA 02
