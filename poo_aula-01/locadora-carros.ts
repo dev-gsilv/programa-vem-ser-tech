@@ -6,6 +6,7 @@ interface Carro {
     ano: number;
     km: number;
     combustivel: string;
+    diaria: number;
     mostrarVeiculo: Function;
 }
 
@@ -19,6 +20,7 @@ cadastrarCarro({
     ano: 2020,
     km: 50000,
     combustivel: 'flex',
+    diaria: 100,
     mostrarVeiculo: function imprimir() {
         console.log(this);
     },
@@ -30,6 +32,7 @@ cadastrarCarro({
     ano: 2022,
     km: 45000,
     combustivel: 'flex',
+    diaria: 120,
     mostrarVeiculo: function imprimir() {
         console.log(this);
     },
