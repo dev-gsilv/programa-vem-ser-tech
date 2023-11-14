@@ -1,15 +1,26 @@
-import { question } from "readline-sync";
-import { Service } from "./service";
+import { question } from 'readline-sync';
+import { Service } from './serviceFuncionario';
+import { DadosFuncionario } from './funcionarioInterface';
 
-const dados: string[] = [];
+class Main {
 
-function promptUsuario(){
-    dados[0] = question("nome: ");
-    dados[1] = question("email: ");
-    dados[2] = question("cpf: ");
-    dados[3] = question("idade: ");
-    dados[4] = question("cargo: ");
-    dados[5] = question("salário: ");    
+    promptUsuario() {
+        const dados: DadosFuncionario = {
+            nome: question('nome: '),
+            email: question('email: '),
+            cpf: question('cpf: '),
+            idade: question('idade: '),
+            cargo: question('cargo: '),
+            salario: question('salário: '),
+        };
 
-    return dados;
+        const resposta: string | unknown = Service.cadastrar(dados);
+
+        return resposta;
+    }
+
+    
 }
+
+const main = new Main();
+main.promptUsuario();
