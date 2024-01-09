@@ -49,13 +49,16 @@ export class Data {
         }
         const _arquivoOriginal = JSON.parse(arquivoOriginal);
 
-        let response: string | Funcionario = '';
+        // ITERA SOBRE AS CHAVES DO OBJETO
         for (const chave in _arquivoOriginal) {
-            if (chave === cpf) {
-                response = _arquivoOriginal[chave];
-            } else response = 'Usuário não existe!';
+            if (_arquivoOriginal.hasOwnProperty(chave) && chave === cpf) {
+                // RETORNA O FUNCIONÁRIO CORRESPONDENTE
+                return _arquivoOriginal[chave];
+            }
         }
-        return response;
+
+        // SE NÃO ENCONTRAR, RETORNA A MENSAGEM
+        return 'Usuário não encontrado!';
     }
 
     static update() {}

@@ -21,15 +21,19 @@ class Main {
             switch (opcao) {
                 case 1:
                     console.log('\nCadastro de funcionário.');
-                    const dados: DadosFuncionario = {
+                    cpf = question('Digite o CPF para iniciar o cadastro: ');
+                    
+                    
+
+
+                 /*    const dados: DadosFuncionario = {
                         nome: question('nome: '),
                         email: question('email: '),
-                        cpf: question('cpf: '),
                         idade: question('idade: '),
                         cargo: question('cargo: '),
                         salario: question('salário: '),
-                    };
-                    console.log(Service.cadastrar(dados));
+                    }; */
+                    console.log(Service.cadastrar(cpf));
                     break;
                 case 2:
                     console.log('\nBusca de funcionário.');
@@ -64,7 +68,7 @@ export function confirmarFuncionario(funcionario: Funcionario) {
     } else return 'continuar';
 }
 
-export function solicitarDados(funcionario: Funcionario) {
+export function solicitarDados() {
     let update: DadosFuncionario = {
         nome: '',
         email: '',
@@ -75,7 +79,7 @@ export function solicitarDados(funcionario: Funcionario) {
 
     for(const chave in update){
         do {
-            console.log(`Informe um novo valor para o campo`)
+            console.log(`Informe um valor para o campo`)
             update[chave] = question(`${chave}: `)
         } while (update[chave] === "");
     }

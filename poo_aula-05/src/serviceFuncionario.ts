@@ -4,30 +4,41 @@ import { DadosFuncionario } from './funcionarioInterface';
 import { solicitarDados, confirmarFuncionario } from './index';
 
 export class Service {
-    static cadastrar(dados: DadosFuncionario) {
-        try {
+    static cadastrar(cpf: string) {
+        const validarCpf = Service.buscar(cpf);
+        console.log("instanceof Object L9", validarCpf instanceof Object)
+        console.log("instanceof Funcionario L9", validarCpf instanceof Funcionario)
+        console.log("typeof Funcionario L9", typeof validarCpf)
+        console.log("Funcionario L9", validarCpf)
+        
+        if (validarCpf instanceof Object) {
+            return 'Usuário já possui cadastro!';
+        }
+
+        /*         try {
             for (const prop in dados) {
                 if (!dados[prop]) {
                     throw new Error(
                         `Verifique o campo ${prop} e tente novamente.`,
                     );
                 }
-            }
-            const response = Data.save(
-                new Funcionario(
-                    dados.nome,
-                    dados.email,
-                    dados.cpf as string,
-                    parseInt(dados.idade),
-                    dados.cargo,
-                    parseInt(dados.salario),
-                ),
-            );
-            return response;
-        } catch (error) {
+            } */
+        const novoFuncionario = solicitarDados();
+        const response = Data.save(
+            new Funcionario(
+                novoFuncionario.nome,
+                novoFuncionario.email,
+                cpf as string,
+                parseInt(novoFuncionario.idade),
+                novoFuncionario.cargo,
+                parseInt(novoFuncionario.salario),
+            ),
+        );
+        return response;
+        /*         } catch (error) {
             console.log(error);
             return error;
-        }
+        } */
     }
 
     static buscar(cpfString: string) {
@@ -49,11 +60,11 @@ export class Service {
             cargo: '',
             salario: '',
         };
-        if (confirmarFuncionario(funcionario as Funcionario) === "cancelar") {
-            return "Alteração de funcionário cancelada.";
+        if (confirmarFuncionario(funcionario as Funcionario) === 'cancelar') {
+            return 'Alteração de funcionário cancelada.';
         }
-        
-        update = solicitarDados(funcionario as Funcionario);
+
+        update = solicitarDados();
 
         const response = Data.save(
             new Funcionario(
