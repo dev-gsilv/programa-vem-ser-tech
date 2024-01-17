@@ -15,8 +15,23 @@ app.get('/healthcheck', (req, response) => {
 
 const emailsContato = [];
 app.post('/contato', (req, res) => {
-    emailsContato.push(req.body.email);
-    res.sendFile(__dirname + '/public/success.html');
+    try {
+        if (req.body.email != '') {
+            emailsContato.push(req.body.email);
+            res.sendFile(__dirname + '/public/success.html');
+        } else {
+            throw new Error('Falha na requisição');
+        }
+    } catch (err) {
+        next(new Error('Falha na requisição'));
+    }
+});
+// Handler de erro
+app.use((err, req, res, next) => {
+    console.log('Caiu no handler de erro!');
+    res.status(503).send({
+        mensagem: 'Servidor indisponível!',
+    });
 });
 app.get('/emails', (req, res) => {
     res.send(emailsContato);
