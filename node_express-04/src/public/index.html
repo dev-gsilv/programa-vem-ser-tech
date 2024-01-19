@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aula 5</title>
+    </head>
+    <body>
+        <h1>Cadastro de item</h1>
+        <h3>Exercício aula 5</h3>
+
+        <form
+            action="/cadastro-itens"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" />
+            <br />
+            <br />
+            <label for="valor">Valor</label>
+            <input type="number" name="valor" />
+            <br />
+            <br />
+            <label for="descrição">Descrição</label>
+            <input type="text" name="descrição" />
+            <br />
+            <br />
+            <label for="quantidade">Quantidade</label>
+            <input type="number" name="quantidade" />
+            <br />
+            <br />
+            <label for="foto">Foto</label>
+            <input type="file" name="foto" />
+            <br />
+            <br />
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </body>
+</html>
