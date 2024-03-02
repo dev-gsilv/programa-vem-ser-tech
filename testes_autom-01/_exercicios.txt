@@ -1,0 +1,42 @@
+
+1) Função de soma:
+
+Cenário: Quando dois números são somados
+Dado que tenho dois números, por exemplo, 2 e 3
+Quando eu somo esses dois números
+Então o resultado deve ser 5
+
+2) Validação de senha:
+
+Cenário: Quando uma senha é validada
+Dado uma senha que atende aos critérios, por exemplo, "Passw0rd"
+Quando eu valido a senha
+Então o resultado deve ser verdadeiro
+
+3) Fatorial:
+
+Cenário: Quando o fatorial de um número é calculado
+Dado um número inteiro positivo, por exemplo, 5
+Quando eu calculo o fatorial desse número
+Então o resultado deve ser 120
+
+4) Verificação de palíndromo:
+
+Cenário: Quando uma string é verificada como palíndromo
+Dado uma string que é um palíndromo, por exemplo, "radar"
+Quando eu verifico se é um palíndromo
+Então o resultado deve ser verdadeiro
+
+5) Conversor de temperatura:
+
+Cenário: Quando uma temperatura em Celsius é convertida para Fahrenheit
+Dado uma temperatura em Celsius, por exemplo, 0 graus
+Quando eu converto essa temperatura para Fahrenheit
+Então o resultado deve ser 32 graus Fahrenheit
+
+6)Validação de e-mail:
+
+Cenário: Quando um endereço de e-mail é validado
+Dado um endereço de e-mail válido, por exemplo, "test@example.com"
+Quando eu valido o endereço de e-mail
+Então o resultado deve ser verdadeiro
